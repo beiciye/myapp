@@ -1,4 +1,3 @@
-import 'whatwg-fetch';
 
 export const GETNEWSLIST_REQUEST = "GETNEWSLIST_REQUEST";
 export const GETNEWSLIST_SUCCESS = "GETNEWSLIST_SUCCESS";

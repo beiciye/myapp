@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import './maincontent.css';
 import {getNewsList} from '../../actions/maincontent';
-
+import moment from 'moment';
 
 export default class MainContent extends Component {
     componentDidMount(){
@@ -10,6 +10,7 @@ export default class MainContent extends Component {
     }
 
     render(){
+        const {postList} = this.props;
        return (
            <main className="main_content">
                <nav>
@@ -23,14 +24,21 @@ export default class MainContent extends Component {
                </nav>
                <div className="newlist">
                    <ul>
-                        <li>
-                            <img src="" alt="" width="30" height="30" className="manpic"/><span>50/22121</span> <span>置顶</span>
-                            <span>中国最大的</span>
-                        </li>
+                       {
+                           postList.map((post,index) =>
+                               <li key ={post.id + index}>
+                                   <img src={post.author.avatar_url} title={post.author.loginname} width="30" height="30" className="manpic"/><span>{post.reply_count}/{post.visit_count}</span> <span>置顶</span>
+                                   <span>{post.title}</span>
+                               </li>
+                           )
+                       }
+
                    </ul>
                </div>
            </main>
        )
     }
 }
-export default connect(()=>({}))(MainContent)
+export default connect(
+    (state)=>({postList:state.maincontent.postList}))
+(MainContent)
