@@ -1,0 +1,30 @@
+.main_content{
+    width: 900px;
+    margin-left: 100px;
+    height: 200px;
+    margin-top: 20px;
+}
+.main_content_header {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    background: #f6f6f6;
+    border-radius: 5px 5px 0 0;
+}
+.main_content_header li {
+    margin-left: 20px;
+}
+.main_content_header li a {
+    color: #80bd01;
+}
+.newlist {
+    background: #ffffff;
+    min-height: 400px;
+}
+.newlist ul li {
+    height: 30px;
+    padding: 5px;
+}
+.manpic {
+    vertical-align: middle;
+}
