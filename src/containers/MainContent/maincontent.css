@@ -16,7 +16,15 @@
 }
 .main_content_header li a {
     color: #80bd01;
+    padding: 5px;
+    font-size: 14px;
 }
+.main_content_header li a.selected {
+    background-color: #80bd01;
+    color: #fff;
+    border-radius: 3px;
+}
+
 .newlist {
     background: #ffffff;
     min-height: 400px;
@@ -28,4 +36,24 @@
 .manpic {
     vertical-align: middle;
     margin-right: 15px;
+}
+.lastreplay {
+    float: right;
+    margin-right: 15px;
+    line-height: 30px;
+}
+.posttype {
+    display: inline-block;
+    padding:2px 4px;
+    font-size: 12px;
+    border-radius: 3px;
+    margin: 0 5px;
+}
+.puttop {
+    background: #80bd01;
+    color: #fff;
+}
+.share {
+    background-color: #e5e5e5;
+    color: #999;
 }
