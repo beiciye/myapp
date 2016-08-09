@@ -33,5 +33,7 @@ export default function newFetch(url,method,params){
                     "Content-Type":"application/json"
                 }
             }).then(checkStatus).then(parseJSON);
+        default:
+            return fetch
     }
 }

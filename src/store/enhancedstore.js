@@ -6,9 +6,13 @@ const logger = createLogger();
 
 import {app } from '../reduers/app';
 import {maincontent} from '../reduers/maincontent';
+import {postdetail} from  '../reduers/postdetail'
+
+
 let reducer = combineReducers({
     app,
-    maincontent
+    maincontent,
+    postdetail
 });
 
 const createStoreWithMiddleware = compose (

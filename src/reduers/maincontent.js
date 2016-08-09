@@ -1,7 +1,7 @@
 import {
     GETNEWSLIST_SUCCESS,
     CHECKOUTTAB_SUCCESS,
-    CHECKOUTTAB_FAILURE,
+    //CHECKOUTTAB_FAILURE,
 } from  '../actions/maincontent'
 
 export function maincontent(state={

@@ -33,6 +33,12 @@
     height: 30px;
     padding: 5px;
 }
+.newlist ul li:hover {
+    background: #f5f5f5;
+}
+.post_title:hover {
+    text-decoration: underline;
+}
 .manpic {
     vertical-align: middle;
     margin-right: 15px;

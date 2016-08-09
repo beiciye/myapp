@@ -26,7 +26,7 @@ export function getNewsList(){
             return response.json();
         }).then(json=>{
                 dispatch(getNewsList_success(json))
-            }).catch(error=>dispatch())
+            }).catch(error=>dispatch(getNewsList_failure(error)))
     }
 }
 
