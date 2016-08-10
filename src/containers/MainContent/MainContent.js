@@ -4,6 +4,9 @@ import {Link} from  'react-router'
 import './maincontent.css';
 import {getNewsList,checkoutTab} from '../../actions/maincontent';
 import moment from 'moment';
+import Pagination from 'antd/lib/pagination/Pagination'
+import 'antd/lib/pagination/style/index.css'
+import 'antd/lib/style/index.css'
 import cs from 'classname'
 
 function postType(post) {
@@ -40,9 +43,16 @@ export default class MainContent extends Component {
     }
 
     handleTabClick(url) {
-        this.props.dispatch(checkoutTab(url))
+        this.props.dispatch(checkoutTab({tab:url}))
     }
 
+    pageChange(page){
+        const {dispatch ,selectedTab} = this.props;
+        this.props.dispatch(checkoutTab({
+            tab:selectedTab,
+            page
+        }))
+    }
     render() {
         const {postList,selectedTab} = this.props;
         return (
@@ -79,6 +89,7 @@ export default class MainContent extends Component {
 
                     </ul>
                 </div>
+                <Pagination defaultCurrent={1} onChange={this.pageChange.bind(this)} className="postlist_panigation" total={500}/>
             </main>
         )
     }

@@ -1,7 +1,6 @@
 .main_content{
     width: 900px;
     margin-left: 100px;
-    height: 200px;
     margin-top: 20px;
 }
 .main_content_header {
@@ -30,7 +29,7 @@
     min-height: 400px;
 }
 .newlist ul li {
-    height: 30px;
+    height: 35px;
     padding: 5px;
 }
 .newlist ul li:hover {
@@ -62,4 +61,7 @@
 .share {
     background-color: #e5e5e5;
     color: #999;
+}
+.postlist_panigation {
+    padding: 10px;
 }

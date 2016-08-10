@@ -31,22 +31,21 @@ export function getNewsList(){
 }
 
 
-const checkout_success = (pyload,selectedTab)=>({
+const checkout_success = (pyload,data)=>({
     type:CHECKOUTTAB_SUCCESS,
-    selectedTab,
-    postList:pyload.data,
+    selectedTab:data.tab,
+    postList:pyload.data
 });
 
 const checkout_failure = (error)=>({
     type:CHECKOUTTAB_FAILURE,
     error
 });
-export function checkoutTab(url){
+export function checkoutTab(data){
     return dispatch=>{
-        return newFetch("https://cnodejs.org/api/v1/topics",'get',{
-            tab:url
-        }).then(json=>{
-            dispatch(checkout_success(json,url))
+        return newFetch("https://cnodejs.org/api/v1/topics",'get',data).
+        then(json=>{
+            dispatch(checkout_success(json,data))
         })
         .catch(error=>dispatch(checkout_failure(error)))
     }

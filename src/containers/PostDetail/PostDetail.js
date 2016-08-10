@@ -40,7 +40,7 @@ class PostDetail extends Component{
 
 
     render(){
-        const {postdetail} = this.props;
+        const {postdetail,replay} = this.props;
         return (
 
             <div className="postDetail">
@@ -61,9 +61,26 @@ class PostDetail extends Component{
                         </main>
                         <section>
                             <h5 className="postdetail_replay_count">{postdetail.reply_count} 回复</h5>
-                            <div>
+                            <ul className="replies_list">
+                                {
+                                    replay.map((v,index)=>
+                                        <li key={v.id + index}>
+                                            <p className="reply_title">
+                                                <img src={v.author.avatar_url} className="post_portrait" alt="portrait"/>
+                                                <span>{v.author.loginname}</span>
+                                                <span>{index+1}楼</span>
+                                                <span>•{moment(v.create_at).format("YYYY-MM-DD hh:mm")}</span>
 
-                            </div>
+                                                {v.ups.length!==0 &&
+                                                    <a className="upmount">{v.ups.length}</a>
+                                                }
+                                            </p>
+                                            <p dangerouslySetInnerHTML={{__html:v.content}}></p>
+                                        </li>
+                                    )
+                                }
+
+                            </ul>
                         </section>
                     </article>
 
@@ -76,5 +93,6 @@ class PostDetail extends Component{
 }
 
 export default connect(state=>({
-    postdetail:state.postdetail.postdetail
+    postdetail:state.postdetail.postdetail,
+    replay:state.postdetail.replay
 }))(PostDetail)

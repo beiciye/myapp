@@ -44,3 +44,24 @@
     background: #f6f6f6;
     padding: 10px;
 }
+.replies_list {
+
+}
+.replies_list li {
+    padding: 5px 10px 15px;
+    border-bottom: 1px solid #cccccc;
+}
+.upmount {
+    float: right;
+}
+.post_portrait {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+.reply_title span{
+   margin-left: 5px;
+}
+.upmount:before {
+    content: "";
+}

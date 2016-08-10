@@ -5,12 +5,14 @@ import {
 
 
 export function postdetail(state={
-    postdetail:{}
+    postdetail:{},
+    replay:[],
 },action){
     switch (action.type){
         case GETPOSTDETAIL_SUCCESS:
             return Object.assign({},state, {
-                postdetail: action.postdetail
+                postdetail: action.postdetail,
+                replay:action.postdetail.replies,
             });
         default:
             return state
